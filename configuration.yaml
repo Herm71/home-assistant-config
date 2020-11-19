@@ -1,0 +1,117 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+homeassistant:
+  name: Chez Herm
+  latitude: 36.972044
+  longitude: -122.028718
+  elevation: 36
+  unit_system: imperial
+  time_zone: America/Los_Angeles
+  external_url: "https://chezherm.duckdns.org:8123"
+  internal_url: "https://homeassistant:8123"
+  #whitelist_external_dirs:
+  #  - /usr/var/dumping-ground
+  #  - /tmp
+
+#Configure device trackers
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.86.0/24
+# Configure http for ssl certificate
+http:
+    base_url: chezherm.duckdns.org
+    ssl_certificate: /ssl/fullchain.pem
+    ssl_key: /ssl/privkey.pem
+
+# Enable Wake ON Lan
+wake_on_lan:
+
+# LG WebOS TV
+webostv:
+  host: 192.168.86.46
+  name: LG TV
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: 00-51-ed-30-41-95
+  customize:
+    sources:
+      - YouTube TV
+      - Live TV
+      - Channel Plus
+      - Netflix
+      - Amazon Prime Video
+      - YouTube
+      - Emby
+      - Plex
+      - HDMI 1
+      - HDMI 2
+      - HDMI 3
+
+media_player:
+
+# Sensors
+# Example configuration.yaml entry
+sensor:
+  - platform: flunearyou
+  - platform: noaa_tides
+    station_id: 9413745
+    time_zone: lst_ldt
+    unit_system: english
+  - platform: google_wifi
+    host: onhub.here
+    name: Google google_wifi
+    monitored_conditions:
+      - current_version
+      - new_version
+      - uptime
+      - last_restart
+      - local_ip
+      - status
+  - platform: template
+    sensors:
+      nextsunrise:
+        entity_id: sun.sun
+        friendly_name: 'Next Sunrise'
+        value_template: >
+          {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
+        icon_template: mdi:weather-sunset-up
+      nextsunset:
+        entity_id: sun.sun
+        friendly_name: 'Next Sunset'
+        value_template: >
+          {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
+        icon_template: mdi:weather-sunset-down
+  - platform: moon
+  - platform: season
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'date_time_utc'
+      - 'date_time_iso'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
+  - platform: template
+    sensors:
+      weekday:
+        value_template: "{{ now().strftime('%a') }}"
+        entity_id: sensor.date
+        friendly_name: 'Day of Week'
+      newdate:
+        value_template: "{{ now().strftime('%m %d %y') }}"
+        entity_id: sensor.date
+        friendly_name: "Today's Date"
