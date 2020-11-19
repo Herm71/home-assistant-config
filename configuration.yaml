@@ -24,6 +24,9 @@ homeassistant:
   #  - /usr/var/dumping-ground
   #  - /tmp
 
+#HACS
+hacs:
+  token: !secret hacs_access_token
 #Configure device trackers
 device_tracker:
   - platform: nmap_tracker
