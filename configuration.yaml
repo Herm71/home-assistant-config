@@ -24,9 +24,14 @@ homeassistant:
   #  - /usr/var/dumping-ground
   #  - /tmp
 
-#HACS
-hacs:
-  token: !secret hacs_access_token
+#HACS debug
+logger:
+  default: info
+  logs:
+    custom_components.hacs: debug
+    hacs: debug
+    queueman: debug
+    AIOGitHubAPI: debug
 #Configure device trackers
 device_tracker:
   - platform: nmap_tracker

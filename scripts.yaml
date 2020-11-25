@@ -1,0 +1,8 @@
+movie_time:
+  sequence:
+  - service: hue.hue_activate_scene
+    data:
+      group_name: Entertainment center
+      scene_name: Chill
+  mode: single
+  alias: Entertainment Center - Chill
