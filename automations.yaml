@@ -52,7 +52,10 @@
   trigger:
   - at: 05:00:00
     platform: time
-  condition: []
+  condition:
+  - condition: zone
+    entity_id: person.jason
+    zone: zone.home
   action:
   - scene: scene.kitchen_lightstrip_morning
   - scene: scene.nick_nack_random
@@ -137,4 +140,21 @@
     data:
       group_name: Entertainment Center
       scene_name: Zany
+  mode: single
+- id: '1606329407790'
+  alias: Away at night
+  description: If I am away, turn on lights at sunset
+  trigger:
+  - platform: sun
+    event: sunset
+  condition:
+  - condition: state
+    entity_id: person.jason
+    state: away
+  action:
+  - type: turn_on
+    device_id: 685d180a1eb0482103ac5cb9a6174ce8
+    entity_id: light.floor_lamp
+    domain: light
+    brightness_pct: 50
   mode: single
