@@ -137,6 +137,12 @@ conversation:
     VaseLampOn:
       - "Turn the Vase Lamp on"
       - "Turn on the Vase Lamp"
+    KitchenLightStripOff:
+      - "Turn the Kitchen Cabinet Lightstrip off"
+      - "Turn off the Kitchen Cabinet Lightstrip"
+    KitchenLightStripOn:
+      - "Turn the Kitchen Cabinet Lightstrip on"
+      - "Turn on the Kitchen Cabinet Lightstrip"
 intent_script:
   BongLampOff:
     speech:
@@ -162,6 +168,20 @@ intent_script:
   VaseLampOn:
     speech:
       text: Turning the Vase Lamp on
+    action:
+      service: switch.turn_on
+      data:
+        entity_id: switch.italian_vase_lamp
+  KitchenLightStripOff:
+    speech:
+      text: Turning the Kitchen Cabinet Lightstrip off
+    action:
+      service: switch.turn_off
+      data:
+        entity_id: switch.italian_vase_lamp
+  KitchenLightStripOn:
+    speech:
+      text: Turning the Kitchen Cabinet Lightstrip on
     action:
       service: switch.turn_on
       data:
