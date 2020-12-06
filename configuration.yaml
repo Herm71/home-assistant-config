@@ -1,4 +1,3 @@
-
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -38,9 +37,9 @@ device_tracker:
     hosts: 192.168.86.0/24
 # Configure http for ssl certificate
 http:
-    base_url: chezherm.duckdns.org
-    ssl_certificate: /ssl/fullchain.pem
-    ssl_key: /ssl/privkey.pem
+  base_url: chezherm.duckdns.org
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
 
 # Enable Wake ON Lan
 wake_on_lan:
@@ -91,13 +90,13 @@ sensor:
     sensors:
       nextsunrise:
         entity_id: sun.sun
-        friendly_name: 'Next Sunrise'
+        friendly_name: "Next Sunrise"
         value_template: >
           {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
         icon_template: mdi:weather-sunset-up
       nextsunset:
         entity_id: sun.sun
-        friendly_name: 'Next Sunset'
+        friendly_name: "Next Sunset"
         value_template: >
           {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %I:%M %p') | replace(" 0", "") }}
         icon_template: mdi:weather-sunset-down
@@ -105,21 +104,35 @@ sensor:
   - platform: season
   - platform: time_date
     display_options:
-      - 'time'
-      - 'date'
-      - 'date_time'
-      - 'date_time_utc'
-      - 'date_time_iso'
-      - 'time_date'
-      - 'time_utc'
-      - 'beat'
+      - "time"
+      - "date"
+      - "date_time"
+      - "date_time_utc"
+      - "date_time_iso"
+      - "time_date"
+      - "time_utc"
+      - "beat"
   - platform: template
     sensors:
       weekday:
         value_template: "{{ now().strftime('%a') }}"
         entity_id: sensor.date
-        friendly_name: 'Day of Week'
+        friendly_name: "Day of Week"
       newdate:
         value_template: "{{ now().strftime('%m %d %y') }}"
         entity_id: sensor.date
         friendly_name: "Today's Date"
+# Voice commands -- conversation
+conversation:
+  intents:
+    BongLampOff:
+      - "Turn the Bong Lamp off"
+      - "Turn off the Bong Lamp"
+intent_script:
+  BongLampOff:
+    speech:
+      text: Turning the Bong Lamp off
+    action:
+      service: switch.turn_off
+      data:
+        entity_id: switch.bong_lamp
