@@ -39,10 +39,11 @@ nick_nacks:
     - light.rock_and_rye_light
     - light.pocket_watch_light
 Internet:
-  - sensor.speedtest_download
-  - sensor.speedtest_upload
-  - sensor.speedtest_ping
   - sensor.hass_uptime
+  - sensor.google_wifi_system_aaaaabz0hhk_upload_speed
+  - sensor.google_wifi_system_aaaaabz0hhk_download_speed
+  - sensor.google_wifi_system_aaaaabz0hhk_connected_devices
+  - sensor.google_wifi_system_aaaaabz0hhk_total_devices
   - sensor.google_wifi_status
   - sensor.google_wifi_uptime
   - sensor.google_wifi_last_restart
