@@ -186,3 +186,24 @@ intent_script:
       service: switch.turn_on
       data:
         entity_id: switch.italian_vase_lamp
+#SPEEDTEST
+sensor speedtest:
+  platform: speedtest
+  minute: 30
+  hour:
+    - 0
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+    - 12
+    - 14
+    - 16
+    - 18
+    - 20
+    - 22
+  monitored_conditions:
+    - ping
+    - download
+    - upload
