@@ -158,3 +158,15 @@
     domain: light
     brightness_pct: 50
   mode: single
+- id: '1607373949770'
+  alias: Add Torrent
+  description: Add torrent from text file
+  trigger:
+  - platform: state
+    entity_id: input_text.torrent_url
+  condition: []
+  action:
+  - service: transmission.add_torrent
+    data:
+      value: '{{ states(''input_text.torrent_url'') }}'
+  mode: single
