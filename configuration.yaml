@@ -253,3 +253,23 @@ intent_script:
       service: switch.turn_on
       data:
         entity_id: switch.italian_vase_lamp
+media_player:
+  - platform: universal
+    name: Universal Media
+    children:
+      - media_player.plex_plex_cast_chromecast
+      - media_player.plex_plex_for_lg_lg_49uk6090pua
+      - media_player.jason_s_group
+      - media_player.jason_s_group_2
+      - media_player.lg_tv_2
+    commands:
+      next_track:
+        service: media_player.media_next_track
+        data:
+          entity_id: media_player.universal_media
+    attributes:
+      state: switch.living_room_tv
+      is_volume_muted: switch.living_room_mute
+      volume_level: media_player.receiver|volume_level
+      source: media_player.receiver|source
+      source_list: media_player.receiver|source_list
