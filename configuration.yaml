@@ -123,6 +123,30 @@ sensor:
         value_template: "{{ now().strftime('%m %d %y') }}"
         entity_id: sensor.date
         friendly_name: "Today's Date"
+  - platform: template
+    sensors:
+      lastfm_currentTrack:
+        friendly_name: "LastFM Current Track"
+        value_template: >-
+          {% if states.sensor.herm71 %}
+          Currently Scrobbling: {{states.sensor.herm71.state}}
+          {%endif%}
+        unique_id: lastfm.currentTrack
+      lastfm_lastTrack:
+        friendly_name: "LastFM Last Track"
+        value_template: >-
+          {% if states.sensor.herm71 %}
+          Last Played: {{state_attr('sensor.herm71','last_played')}}
+          {%endif%}
+        unique_id: lastfm.lastTrack
+      lastfm_topTrack:
+        friendly_name: "LastFM Top Track"
+        value_template: >-
+          {% if states.sensor.herm71 %}
+          Last Played: {{state_attr('sensor.herm71','top_played')}}
+          {%endif%}
+        unique_id: lastfm.lastTrack
+
 # Voice commands -- conversation
 conversation:
   intents:
