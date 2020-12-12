@@ -199,17 +199,26 @@ conversation:
       - "Turn the Bong Lamp on"
       - "Turn on the Bong Lamp"
     VaseLampOff:
-      - "Turn the Vase Lamp off"
-      - "Turn off the Vase Lamp"
+      - "Turn the Italian Lamp off"
+      - "Turn off the Italian Lamp"
     VaseLampOn:
-      - "Turn the Vase Lamp on"
-      - "Turn on the Vase Lamp"
+      - "Turn the Italian Lamp on"
+      - "Turn on the Italian Lamp"
     KitchenLightStripOff:
       - "Turn the Kitchen Cabinet Lightstrip off"
       - "Turn off the Kitchen Cabinet Lightstrip"
     KitchenLightStripOn:
       - "Turn the Kitchen Cabinet Lightstrip on"
       - "Turn on the Kitchen Cabinet Lightstrip"
+    KitchenLightStripPrep:
+      - "Set Kitchen Cabinet Lightstrip to prep"
+      - "Set the Kitchen Cabinet Lightstrip prep scene"
+    KitchenLightStripMorning:
+      - "Set Kitchen Cabinet Lightstrip to morning"
+      - "Set the Kitchen Cabinet Lightstrip morning scene"
+    KitchenLightStripRandom:
+      - "Set Kitchen Cabinet Lightstrip to random"
+      - "Set the Kitchen Cabinet Lightstrip random scene"
 intent_script:
   BongLampOff:
     speech:
@@ -227,14 +236,14 @@ intent_script:
         entity_id: switch.bong_lamp
   VaseLampOff:
     speech:
-      text: Turning the Vase Lamp off
+      text: Turning the Italian Lamp off
     action:
       service: switch.turn_off
       data:
         entity_id: switch.italian_vase_lamp
   VaseLampOn:
     speech:
-      text: Turning the Vase Lamp on
+      text: Turning the Italian Lamp on
     action:
       service: switch.turn_on
       data:
@@ -243,13 +252,34 @@ intent_script:
     speech:
       text: Turning the Kitchen Cabinet Lightstrip off
     action:
-      service: switch.turn_off
+      service: light.turn_off
       data:
-        entity_id: switch.italian_vase_lamp
+        entity_id: light.kitchen_cabinet_lightstrip
   KitchenLightStripOn:
     speech:
       text: Turning the Kitchen Cabinet Lightstrip on
     action:
-      service: switch.turn_on
+      service: light.turn_on
       data:
-        entity_id: switch.italian_vase_lamp
+        entity_id: light.kitchen_cabinet_lightstrip
+  KitchenLightStripPrep:
+    speech:
+      text: Setting the kitchen lightstrip scene to Prep
+    action:
+      service: scene.turn_on
+      data:
+        entity_id: scene.kitchen_prep
+  KitchenLightStripMorning:
+    speech:
+      text: Setting the kitchen lightstrip scene to Morning
+    action:
+      service: scene.turn_on
+      data:
+        entity_id: scene.kitchen_lightstrip_morning
+  KitchenLightStripRandom:
+    speech:
+      text: Setting the kitchen lightstrip scene to Random
+    action:
+      service: scene.turn_on
+      data:
+        entity_id: scene.kitchen_lightstrip_random
