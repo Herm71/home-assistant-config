@@ -47,12 +47,13 @@ wake_on_lan:
 
 # LG WebOS TV
 webostv:
-  host: 192.168.86.46
+  host: 192.168.86.39
   name: LG TV
   turn_on_action:
     service: wake_on_lan.send_magic_packet
     data:
-      mac: 00-51-ed-30-41-95
+      mac: a8:23:fe:56:99:12
+      broadcast_address: 192.168.86.39
   customize:
     sources:
       - YouTube TV
@@ -72,6 +73,10 @@ media_player:
 # Sensors
 # Example configuration.yaml entry
 sensor:
+  - platform: lastfm
+    api_key: ec90320d2a138cbb909906452635f5a2
+    users:
+      - Herm71
   - platform: flunearyou
   - platform: noaa_tides
     station_id: 9413745

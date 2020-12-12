@@ -9,33 +9,29 @@
   condition: []
   action:
   - type: turn_off
-    device_id: 244fff1545e79f3accba5ef1c84baf8e
-    entity_id: switch.lava_lamp
+    device_id: 8aa948545f49302d431832d5b63d9a7f
+    entity_id: switch.lg_webos_tv_uk6090pua_lg_tv
     domain: switch
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.bedroom_nightstand
+    entity_id: group.bedroom_nightstand
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.nick_nacks
+    entity_id: group.nick_nacks
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.entertainment_center_2
+    entity_id: group.entertainment_center_2
   - type: turn_off
-    device_id: 352f0f0f52f6fd204ecfd729f6122638
-    entity_id: switch.salt_lamp
-    domain: switch
-  - type: turn_off
-    device_id: 6707a00f34b32dc52390bd1bbeaf75c0
-    entity_id: switch.bong_lamp
-    domain: switch
-  - type: turn_off
-    device_id: 29515b628ba07c72dd61d6899a0f796a
-    entity_id: switch.italian_vase_lamp
-    domain: switch
-  - type: turn_off
-    device_id: 4111f19842bc25c19254dbb5b18de7ae
-    entity_id: light.rock_and_rye_light
-    domain: light
-  - type: turn_off
-    device_id: 4111f19842bc25c19254dbb5b18de7ae
-    entity_id: light.pocket_watch_light
+    device_id: c14e4472491daf9e3e731750d4601fe1
+    entity_id: light.kitchen_cabinet_lightstrip
     domain: light
   mode: single
 - id: '1591915766628'
-  alias: Off 10PM
-  description: Turn lights off at 10PM
+  alias: Off 11PM
+  description: Turn lights off at 11PM
   trigger:
   - at: '23:00:00'
     platform: time
@@ -45,6 +41,10 @@
     device_id: c14e4472491daf9e3e731750d4601fe1
     entity_id: light.kitchen_cabinet_lightstrip
     domain: light
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.nick_nacks
+    entity_id: group.nick_nacks
   mode: single
 - id: '1591917817012'
   alias: Wake-up
@@ -66,21 +66,27 @@
   trigger:
   - at: 07:00
     platform: time
-  condition: []
+  condition:
+  - condition: zone
+    entity_id: person.jason
+    zone: zone.home
   action:
-  - device_id: c8ef6a20cdf54e509f97e29680b7e215
-    domain: switch
-    entity_id: switch.bong_lamp
-    type: turn_off
   - scene: scene.bong_lamp_led_random
-  - device_id: a7bbbb68a5ed47f48915c4f45fffeaf9
-    domain: light
-    entity_id: light.rock_and_rye_light
-    type: turn_off
-  - device_id: a7bbbb68a5ed47f48915c4f45fffeaf9
-    domain: light
-    entity_id: light.pocket_watch_light
-    type: turn_off
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.living_room_overhead
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.bedroom_overhead
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.office
   mode: single
 - id: '1593448013742'
   alias: Sunset
@@ -88,19 +94,20 @@
   trigger:
   - event: sunset
     platform: sun
-  condition: []
+  condition:
+  - condition: zone
+    entity_id: person.jason
+    zone: zone.home
   action:
   - scene: scene.nick_nack_random
   - scene: scene.bong_lamp_led_random
   - scene: scene.kitchen_lightstrip_morning
-  - type: turn_on
-    device_id: 244fff1545e79f3accba5ef1c84baf8e
-    entity_id: switch.lava_lamp
-    domain: switch
-  - type: turn_on
-    device_id: 352f0f0f52f6fd204ecfd729f6122638
-    entity_id: switch.salt_lamp
-    domain: switch
+  - service: homeassistant.turn_on
+    data:
+      entity_id: group.entertainment_center_2
+    entity_id: group.entertainment_center_2
+  - service: script.entertainment_center_zany
+    data: {}
   mode: single
 - id: '1605646082723'
   alias: Arrive Home
@@ -112,34 +119,15 @@
     event: enter
   condition: []
   action:
-  - type: turn_on
-    device_id: 6707a00f34b32dc52390bd1bbeaf75c0
-    entity_id: switch.bong_lamp
-    domain: switch
-  - type: turn_on
-    device_id: 29515b628ba07c72dd61d6899a0f796a
-    entity_id: switch.italian_vase_lamp
-    domain: switch
+  - service: homeassistant.turn_on
+    data:
+      entity_id: group.bedroom_nightstand
+    entity_id: group.bedroom_nightstand
+  - service: script.living_room_bright
+    data: {}
   - scene: scene.kitchen_lightstrip_morning
   - scene: scene.nick_nack_random
-  - type: turn_on
-    device_id: 685d180a1eb0482103ac5cb9a6174ce8
-    entity_id: light.floor_lamp
-    domain: light
-    brightness_pct: 100
-  mode: single
-- id: '1605717382656'
-  alias: Hue Scene Test
-  description: ''
-  trigger:
-  - platform: sun
-    event: sunset
-  condition: []
-  action:
-  - service: hue.hue_activate_scene
-    data:
-      group_name: Entertainment Center
-      scene_name: Zany
+  - scene: scene.kitchen_prep
   mode: single
 - id: '1606329407790'
   alias: Away at night
