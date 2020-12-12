@@ -130,27 +130,27 @@ sensor:
         friendly_name: "Today's Date"
   - platform: template
     sensors:
-      lastfm_currentTrack:
+      lastfm_currenttrack:
         friendly_name: "LastFM Current Track"
         value_template: >-
           {% if states.sensor.herm71 %}
           Currently Scrobbling: {{states.sensor.herm71.state}}
           {%endif%}
-        unique_id: lastfm.currentTrack
-      lastfm_lastTrack:
+        unique_id: lastfm.currenttrack
+      lastfm_lasttrack:
         friendly_name: "LastFM Last Track"
         value_template: >-
           {% if states.sensor.herm71 %}
           Last Played: {{state_attr('sensor.herm71','last_played')}}
           {%endif%}
-        unique_id: lastfm.lastTrack
-      lastfm_topTrack:
+        unique_id: lastfm.lasttrack
+      lastfm_toptrack:
         friendly_name: "LastFM Top Track"
         value_template: >-
           {% if states.sensor.herm71 %}
           Last Played: {{state_attr('sensor.herm71','top_played')}}
           {%endif%}
-        unique_id: lastfm.lastTrack
+        unique_id: lastfm.toptrack
 
 # Voice commands -- conversation
 conversation:
