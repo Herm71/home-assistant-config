@@ -140,7 +140,6 @@ kitchen_bright:
 #Check Battery Level
 tracker_battery_check:
   alias: Battery Check
-  decription: Check battery levels of devices
   sequence:
     - condition: template
       value_template: >-
