@@ -4,6 +4,11 @@ default_config:
 # Text to speech
 tts:
   - platform: google_translate
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+    base_url: https://chezherm.duckdns.org:8123
+    service_name: google_say
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -78,7 +83,7 @@ media_player:
 # Sensors
 sensor:
   - platform: lastfm
-    api_key: ec90320d2a138cbb909906452635f5a2
+    api_key: !secret lastfm_api_key
     users:
       - Herm71
   - platform: flunearyou
