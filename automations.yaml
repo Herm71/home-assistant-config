@@ -8,10 +8,10 @@
     zone: zone.home
   condition: []
   action:
-  - type: turn_off
-    device_id: 8aa948545f49302d431832d5b63d9a7f
-    entity_id: switch.lg_webos_tv_uk6090pua_lg_tv
-    domain: switch
+  - service: media_player.turn_off
+    data:
+      entity_id: media_player.lg_tv_2
+    entity_id: media_player.lg_tv_2
   - service: homeassistant.turn_off
     data:
       entity_id: group.bedroom_nightstand
@@ -87,6 +87,12 @@
       transition: 600
       brightness: 255
     entity_id: light.office
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.kitchen_overhead
+  - scene: scene.kitchen_prep
   mode: single
 - id: '1593448013742'
   alias: Sunset

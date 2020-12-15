@@ -120,3 +120,32 @@
       xy_color:
       - 0.139
       - 0.081
+- id: '1607798580974'
+  name: Kitchen Lightstrip Random
+  entities:
+    light.kitchen_cabinet_lightstrip:
+      effect_list:
+      - None
+      - Random
+      brightness: 255
+      hs_color:
+      - 193.393
+      - 48.761
+      rgb_color:
+      - 130
+      - 227
+      - 255
+      xy_color:
+      - 0.205
+      - 0.298
+      effect: Random
+      friendly_name: Kitchen Cabinet Lightstrip
+      supported_features: 61
+      state: 'on'
+    light.spice_rack_light:
+      effect_list:
+      - None
+      - Random
+      friendly_name: Spice Rack Light
+      supported_features: 61
+      state: 'off'

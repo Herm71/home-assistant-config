@@ -70,8 +70,12 @@ webostv:
 
 media_player:
 
+#MQTT Broker
+#mqtt:
+#  broker: 192.168.86.86
+#  port: 1883
+#  client_id: home-assistant-1
 # Sensors
-# Example configuration.yaml entry
 sensor:
   - platform: lastfm
     api_key: ec90320d2a138cbb909906452635f5a2
