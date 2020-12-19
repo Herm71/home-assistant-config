@@ -1,6 +1,6 @@
 - id: '1591814013567'
   alias: Away
-  description: ''
+  description: Automations for when I leave home zone
   trigger:
   - entity_id: person.jason
     event: leave
@@ -12,6 +12,10 @@
     data:
       entity_id: media_player.lg_tv_2
     entity_id: media_player.lg_tv_2
+  - service: media_player.turn_off
+    data:
+      entity_id: media_player.jason_s_group
+    entity_id: media_player.jason_s_group
   - service: homeassistant.turn_off
     data:
       entity_id: group.bedroom_nightstand
@@ -28,6 +32,10 @@
     device_id: c14e4472491daf9e3e731750d4601fe1
     entity_id: light.kitchen_cabinet_lightstrip
     domain: light
+  - type: turn_off
+    device_id: 791699cd1a9d5804335ac54577f0fd3c
+    entity_id: switch.xtra_plug
+    domain: switch
   mode: single
 - id: '1591915766628'
   alias: Off 11PM
@@ -134,6 +142,10 @@
   - scene: scene.kitchen_lightstrip_morning
   - scene: scene.nick_nack_random
   - scene: scene.kitchen_prep
+  - type: turn_on
+    device_id: 791699cd1a9d5804335ac54577f0fd3c
+    entity_id: switch.xtra_plug
+    domain: switch
   mode: single
 - id: '1606329407790'
   alias: Away at night
