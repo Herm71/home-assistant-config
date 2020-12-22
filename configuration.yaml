@@ -294,3 +294,22 @@ intent_script:
       service: scene.turn_on
       data:
         entity_id: scene.kitchen_lightstrip_random
+
+# Devices -- MQTT Platform
+switch:
+  - platform: mqtt
+    unique_id: bong_lamp_switch
+    device:
+      name: "Bong Lamp"
+      identifiers: switch.bong_lamp
+    command_topic: "home/bedroom/bongLamp/set"
+    state_topic: "home/bedroom/bongLamp"
+    availability: 
+      - topic: "home/bedroom/bongLamp/available"
+    payload_on: "ON"
+    payload_off: "OFF"
+    state_on: "ON"
+    state_off: "OFF"
+    optimistic: false
+    qos: 0
+    retain: true
