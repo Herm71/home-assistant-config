@@ -76,10 +76,12 @@ webostv:
 media_player:
 
 #MQTT Broker
-#mqtt:
-#  broker: 192.168.86.86
-#  port: 1883
-#  client_id: home-assistant-1
+mqtt:
+  broker: 192.168.86.86
+  port: 1883
+  client_id: home-assistant-1
+  username: !secret mqtt_user
+  password: !secret mqtt_user_pass
 # Sensors
 sensor:
   - platform: lastfm
