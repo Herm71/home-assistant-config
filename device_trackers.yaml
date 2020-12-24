@@ -1,0 +1,10 @@
+- platform: nmap_tracker
+    hosts: 192.168.86.0/24
+    exclude:
+      - 192.168.86.86 #Home Assistant
+      - 192.168.86.45 #Gazelle
+      - 192.168.86.97 #PiServer
+      - 192.168.86.36 #Phillips Hue
+      - 192.168.86.39 #LG TV
+      - 192.168.86.94 #HP Pavillion
+      - 192.168.86.94 #Google Home
