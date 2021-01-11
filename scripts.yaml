@@ -154,3 +154,13 @@ tracker_battery_check:
           {%- set battery_alert_threshold = 10|int -%}
           {%- set low_batteries = states.device_tracker | selectattr('attributes.battery_level', 'defined') | selectattr('attributes.battery_level','<', battery_alert_threshold ) | map(attribute='name') | list | join(', ') -%}
           Low batteries in the following devices: {{ low_batteries }}
+msg_who_is_home:
+  sequence:
+    - service: notify.notify
+      data:
+        message: >
+          {% if is_state('device_tracker.26_73_60_d5_fe_f6', 'home') %}
+            Jason in da House!
+          {% else %}
+            Jason is at {{ states('device_tracker.26_73_60_d5_fe_f6') }}.
+          {% endif %}
