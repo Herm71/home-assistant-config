@@ -1,0 +1,190 @@
+
+70_3a_cb_cd_59_6f:
+  name: 70_3a_cb_cd_59_6f
+  mac: 70:3A:CB:CD:59:6F
+  icon:
+  picture:
+  track: false
+
+70_3a_cb_cd_4f_56:
+  name: 70_3a_cb_cd_4f_56
+  mac: 70:3A:CB:CD:4F:56
+  icon:
+  picture:
+  track: false
+
+70_3a_cb_cd_5b_74:
+  name: 70_3a_cb_cd_5b_74
+  mac: 70:3A:CB:CD:5B:74
+  icon:
+  picture:
+  track: false
+
+wemo_lan:
+  name: wemo.lan
+  mac: 58:EF:68:99:FA:DD
+  icon:
+  picture:
+  track: false
+
+chromecast_audio_lan:
+  name: chromecast-audio.lan
+  mac: A4:77:33:FC:4A:96
+  icon:
+  picture:
+  track: false
+
+wemo_lan_2:
+  name: wemo.lan
+  mac: 58:EF:68:99:29:DD
+  icon:
+  picture:
+  track: false
+
+philips_hue_lan:
+  name: philips-hue.lan
+  mac: 00:17:88:7A:0E:43
+  icon:
+  picture:
+  track: false
+
+google_home_lan:
+  name: google-home.lan
+  mac: F4:F5:D8:A1:90:8E
+  icon:
+  picture:
+  track: false
+
+jason_oryx_pro_lan:
+  name: jason-oryx-pro.lan
+  mac: E4:70:B8:B3:D6:A2
+  icon:
+  picture:
+  track: true
+
+lgwebostv_lan:
+  name: lgwebostv.lan
+  mac: A8:23:FE:56:99:12
+  icon:
+  picture:
+  track: false
+
+b8_27_eb_6b_90_d8:
+  name: b8_27_eb_6b_90_d8
+  mac: B8:27:EB:6B:90:D8
+  icon:
+  picture:
+  track: false
+
+pop_os_lan:
+  name: pop-os.lan
+  mac: A4:34:D9:63:DF:C1
+  icon:
+  picture:
+  track: false
+
+bong_lamp_lan:
+  name: bong_lamp.lan
+  mac: F4:CF:A2:D0:85:38
+  icon:
+  picture:
+  track: false
+
+rock_and_rye_lan:
+  name: rock_and_rye.lan
+  mac: F4:CF:A2:D0:AE:3E
+  icon:
+  picture:
+  track: false
+
+italian_vase_lamp_lan:
+  name: italian_vase_lamp.lan
+  mac: F4:CF:A2:D0:87:0B
+  icon:
+  picture:
+  track: false
+
+kitchencabinetledstrip_lan:
+  name: kitchencabinetledstrip.lan
+  mac: F4:CF:A2:D1:53:03
+  icon:
+  picture:
+  track: false
+
+wemo_lan_3:
+  name: wemo.lan
+  mac: 24:F5:A2:97:D9:77
+  icon:
+  picture:
+  track: false
+
+wemo_lan_4:
+  name: wemo.lan
+  mac: 24:F5:A2:97:6B:E9
+  icon:
+  picture:
+  track: false
+
+jason_hp_pavilion_dv7_notebook_pc_lan:
+  name: jason-hp-pavilion-dv7-notebook-pc.lan
+  mac: 00:23:5A:3C:24:E5
+  icon:
+  picture:
+  track: false
+
+esp_d160d3_lan:
+  name: esp-d160d3.lan
+  mac: F4:CF:A2:D1:60:D3
+  icon:
+  picture:
+  track: false
+
+ubuntu_lan:
+  name: ubuntu.lan
+  mac: B8:27:EB:2A:D7:D8
+  icon:
+  picture:
+  track: false
+
+26_73_60_d5_fe_f6:
+  name: Jason Phone
+  gravatar: jasonchafin@gmail.com
+  mac: 26:73:60:D5:FE:F6
+  icon:
+  picture:
+  track: true
+
+chromecast_audio_lan_2:
+  name: chromecast-audio.lan
+  mac: 54:60:09:F1:A4:18
+  icon:
+  picture:
+  track: false
+
+aria2_lan:
+  name: aria2.lan
+  mac: 18:00:DB:09:44:BA
+  icon:
+  picture:
+  track: false
+
+lgwebostv_lan_2:
+  name: lgwebostv.lan
+  mac: 00:51:ED:30:41:95
+  icon:
+  picture:
+  track: false
+
+ac_37_43_46_a4_8e:
+  name: ac_37_43_46_a4_8e
+  mac: AC:37:43:46:A4:8E
+  icon:
+  picture:
+  track: false
+
+jason_hp_pavilion_dv7_notebook_pc_lan_2:
+  name: jason-hp-pavilion-dv7-notebook-pc.lan
+  mac: 00:22:FA:8B:A5:1C
+  icon:
+  picture:
+  track: true

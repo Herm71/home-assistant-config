@@ -6,7 +6,14 @@
 !.gitignore
 !*.md
 !*/custom_components/
-
+!*/blueprints/
+!*/deps/
+!*/esphome/
+!*/image/
+!*/node-red/
+!*/themes/
+!*/tts/
+!*/www/
 # Ignore folders.
 .storage
 .cloud
