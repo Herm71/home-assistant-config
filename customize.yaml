@@ -1,0 +1,4 @@
+device_tracker.pixel:
+  icon: mdi:cellphone-android
+device_tracker.pixel_3_xl:
+  icon: mdi:cellphone-android
