@@ -164,3 +164,21 @@ msg_who_is_home:
           {% else %}
             Jason is at {{ states('device_tracker.26_73_60_d5_fe_f6') }}.
           {% endif %}
+manual_snapshot:
+  alias: Full Snapshot
+  sequence:
+    - service: hassio.addon_stdin
+      data:
+        addon: 15d21743_samba_backup
+        input:
+          command: trigger
+          backup_name:
+  mode: single
+"1614191255864":
+  alias: "Partial Snapshot "
+  sequence:
+    - service: hassio.addon_stdin
+      data:
+        addon: 15d21743_samba_backup
+        input: trigger
+  mode: single
