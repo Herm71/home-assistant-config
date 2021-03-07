@@ -30,7 +30,10 @@ homeassistant:
   #whitelist_external_dirs:
   #  - /usr/var/dumping-ground
   #  - /tmp
-
+#Recorder -- Database management
+recorder:
+  purge_keep_days: 30
+  commit_interval: 60
 #HACS debug
 logger:
   default: info

@@ -21,5 +21,9 @@
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
-#secrets.yaml
-#known_devices.yaml
+secrets.yaml
+known_devices.yaml
+
+# Ignore database & log
+home-assistant_v2.db
+home-assistant.log
