@@ -1,242 +1,264 @@
-- id: "1591814013567"
+- id: '1591814013567'
   alias: Away Daytime
   description: Automation for when I leave home in the daytime
   trigger:
-    - entity_id: person.jason
-      event: leave
-      platform: zone
-      zone: zone.home
+  - entity_id: person.jason
+    event: leave
+    platform: zone
+    zone: zone.home
   condition:
-    - condition: sun
-      before: sunset
-      after: sunrise
+  - condition: sun
+    before: sunset
+    after: sunrise
   action:
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.lg_tv_2
+  - service: media_player.turn_off
+    data:
       entity_id: media_player.lg_tv_2
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.jason_s_group
+    entity_id: media_player.lg_tv_2
+  - service: media_player.turn_off
+    data:
       entity_id: media_player.jason_s_group
-    - service: media_player.turn_off
-      data:
-        entity_id: plex_plex_cast_chromecast
-      entity_id: media_player.plex_plex_cast_chromecast
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.bedroom_nightstand
+    entity_id: media_player.jason_s_group
+  - service: media_player.turn_off
+    data:
+      entity_id: plex_plex_cast_chromecast
+    entity_id: media_player.plex_plex_cast_chromecast
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.bedroom_nightstand
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.nick_nacks
+    entity_id: group.bedroom_nightstand
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.nick_nacks
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.entertainment_center_2
+    entity_id: group.nick_nacks
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.entertainment_center_2
-    - type: turn_off
-      device_id: c14e4472491daf9e3e731750d4601fe1
-      entity_id: light.kitchen_cabinet_lightstrip
-      domain: light
-    - type: turn_off
-      device_id: 791699cd1a9d5804335ac54577f0fd3c
-      entity_id: switch.xtra_plug
-      domain: switch
+    entity_id: group.entertainment_center_2
+  - type: turn_off
+    device_id: c14e4472491daf9e3e731750d4601fe1
+    entity_id: light.kitchen_cabinet_lightstrip
+    domain: light
+  - type: turn_off
+    device_id: 791699cd1a9d5804335ac54577f0fd3c
+    entity_id: switch.xtra_plug
+    domain: switch
   mode: single
-- id: "1591915766628"
+- id: '1591915766628'
   alias: Off 11PM
   description: Turn lights off at 11PM
   trigger:
-    - at: "23:00:00"
-      platform: time
+  - at: '23:00:00'
+    platform: time
   condition: []
   action:
-    - type: turn_off
-      device_id: c14e4472491daf9e3e731750d4601fe1
-      entity_id: light.kitchen_cabinet_lightstrip
-      domain: light
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.nick_nacks
+  - type: turn_off
+    device_id: c14e4472491daf9e3e731750d4601fe1
+    entity_id: light.kitchen_cabinet_lightstrip
+    domain: light
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.nick_nacks
+    entity_id: group.nick_nacks
   mode: single
-- id: "1591917817012"
+- id: '1591917817012'
   alias: Wake-up
   description: Turn on lights at first alarm
   trigger:
-    - at: 05:00:00
-      platform: time
+  - at: 05:00:00
+    platform: time
   condition:
-    - condition: zone
-      entity_id: person.jason
-      zone: zone.home
+  - condition: zone
+    entity_id: person.jason
+    zone: zone.home
   action:
-    - scene: scene.kitchen_lightstrip_morning
-    - scene: scene.nick_nack_random
+  - scene: scene.kitchen_lightstrip_morning
+  - scene: scene.nick_nack_random
   mode: single
-- id: "1592782675006"
+- id: '1592782675006'
   alias: Morning 7AM
   description: Stuff to do at 7AM
   trigger:
-    - at: 07:00
-      platform: time
+  - at: 07:00
+    platform: time
   condition:
-    - condition: zone
-      entity_id: person.jason
-      zone: zone.home
+  - condition: zone
+    entity_id: person.jason
+    zone: zone.home
   action:
-    - scene: scene.bong_lamp_led_random
-    - service: light.turn_on
-      data:
-        transition: 600
-        brightness: 255
-      entity_id: light.living_room_overhead
-    - service: light.turn_on
-      data:
-        transition: 600
-        brightness: 255
-      entity_id: light.bedroom_overhead
-    - service: light.turn_on
-      data:
-        transition: 600
-        brightness: 255
-      entity_id: light.office
-    - service: light.turn_on
-      data:
-        transition: 600
-        brightness: 255
-      entity_id: light.kitchen_overhead
-    - scene: scene.kitchen_prep
+  - scene: scene.bong_lamp_led_random
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.living_room_overhead
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.bedroom_overhead
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.office
+  - service: light.turn_on
+    data:
+      transition: 600
+      brightness: 255
+    entity_id: light.kitchen_overhead
+  - scene: scene.kitchen_prep
   mode: single
-- id: "1593448013742"
+- id: '1593448013742'
   alias: Sunset
   description: Lights to turn on at sunset
   trigger:
-    - event: sunset
-      platform: sun
+  - event: sunset
+    platform: sun
   condition:
-    - condition: zone
-      entity_id: person.jason
-      zone: zone.home
+  - condition: zone
+    entity_id: person.jason
+    zone: zone.home
   action:
-    - scene: scene.nick_nack_random
-    - scene: scene.bong_lamp_led_random
-    - scene: scene.kitchen_lightstrip_morning
-    - service: homeassistant.turn_on
-      data:
-        entity_id: group.entertainment_center_2
+  - scene: scene.nick_nack_random
+  - scene: scene.bong_lamp_led_random
+  - scene: scene.kitchen_lightstrip_morning
+  - service: homeassistant.turn_on
+    data:
       entity_id: group.entertainment_center_2
-    - service: script.entertainment_center_zany
-      data: {}
+    entity_id: group.entertainment_center_2
+  - service: script.entertainment_center_zany
+    data: {}
   mode: single
-- id: "1605646082723"
+- id: '1605646082723'
   alias: Arrive Home Daytime
   description: Arrive home after sunrise and before sunset
   trigger:
-    - platform: zone
-      entity_id: person.jason
-      zone: zone.home
-      event: enter
+  - platform: zone
+    entity_id: person.jason
+    zone: zone.home
+    event: enter
   condition:
-    - condition: sun
-      before: sunset
-      after: sunrise
+  - condition: sun
+    before: sunset
+    after: sunrise
   action:
-    - service: homeassistant.turn_on
-      data:
-        entity_id: group.bedroom_nightstand
+  - service: homeassistant.turn_on
+    data:
       entity_id: group.bedroom_nightstand
-    - service: script.living_room_bright
-      data: {}
-    - scene: scene.kitchen_prep
-    - scene: scene.nick_nack_random
-    - type: turn_on
-      device_id: 791699cd1a9d5804335ac54577f0fd3c
-      entity_id: switch.xtra_plug
-      domain: switch
+    entity_id: group.bedroom_nightstand
+  - service: script.living_room_bright
+    data: {}
+  - scene: scene.kitchen_prep
+  - scene: scene.nick_nack_random
+  - type: turn_on
+    device_id: 791699cd1a9d5804335ac54577f0fd3c
+    entity_id: switch.xtra_plug
+    domain: switch
   mode: single
-- id: "1606329407790"
+- id: '1606329407790'
   alias: Away at night
   description: If I am away, turn off most lights, turn on nightlights
   trigger:
-    - platform: zone
-      entity_id: person.jason
-      zone: zone.home
-      event: leave
+  - platform: zone
+    entity_id: person.jason
+    zone: zone.home
+    event: leave
   condition:
-    - condition: sun
-      before: sunrise
-      after: sunset
+  - condition: sun
+    before: sunrise
+    after: sunset
   action:
-    - type: turn_off
-      device_id: 685d180a1eb0482103ac5cb9a6174ce8
-      entity_id: light.floor_lamp
-      domain: light
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.livingroom_overhead
+  - type: turn_off
+    device_id: 685d180a1eb0482103ac5cb9a6174ce8
+    entity_id: light.floor_lamp
+    domain: light
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.livingroom_overhead
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.bedroom_overhead
+    entity_id: group.livingroom_overhead
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.bedroom_overhead
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.bedroom_nightstand
+    entity_id: group.bedroom_overhead
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.bedroom_nightstand
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.kitchen_overhead
+    entity_id: group.bedroom_nightstand
+  - service: homeassistant.turn_off
+    data:
       entity_id: group.kitchen_overhead
-    - service: script.entertainment_center_night_light
-      data: {}
-    - service: homeassistant.turn_on
-      data:
-        entity_id: group.entertainment_center_2
+    entity_id: group.kitchen_overhead
+  - service: script.entertainment_center_night_light
+    data: {}
+  - service: homeassistant.turn_on
+    data:
       entity_id: group.entertainment_center_2
-    - scene: scene.nick_nack_random
-    - scene: scene.kitchen_lightstrip_morning
-    - type: turn_on
-      device_id: 29515b628ba07c72dd61d6899a0f796a
-      entity_id: switch.italian_vase_lamp
-      domain: switch
-    - type: turn_on
-      device_id: 791699cd1a9d5804335ac54577f0fd3c
-      entity_id: switch.xtra_plug
-      domain: switch
-    - service: media_player.turn_off
-      data: {}
-      entity_id: media_player.jason_s_group
-    - service: media_player.turn_off
-      data: {}
-      entity_id: media_player.plex_plex_cast_chromecast
-    - service: media_player.turn_off
-      data: {}
-      entity_id: media_player.lg_tv_2
+    entity_id: group.entertainment_center_2
+  - scene: scene.nick_nack_random
+  - scene: scene.kitchen_lightstrip_morning
+  - type: turn_on
+    device_id: 29515b628ba07c72dd61d6899a0f796a
+    entity_id: switch.italian_vase_lamp
+    domain: switch
+  - type: turn_on
+    device_id: 791699cd1a9d5804335ac54577f0fd3c
+    entity_id: switch.xtra_plug
+    domain: switch
+  - service: media_player.turn_off
+    data: {}
+    entity_id: media_player.jason_s_group
+  - service: media_player.turn_off
+    data: {}
+    entity_id: media_player.plex_plex_cast_chromecast
+  - service: media_player.turn_off
+    data: {}
+    entity_id: media_player.lg_tv_2
   mode: single
-- id: "1607373949770"
+- id: '1607373949770'
   alias: Add Torrent
   description: Add torrent from text file
   trigger:
-    - platform: state
-      entity_id: input_text.torrent_url
+  - platform: state
+    entity_id: input_text.torrent_url
   condition: []
   action:
-    - service: transmission.add_torrent
-      data:
-        value: "{{ states('input_text.torrent_url') }}"
+  - service: transmission.add_torrent
+    data:
+      value: '{{ states(''input_text.torrent_url'') }}'
   mode: single
-- id: "1614012243814"
+- id: '1614012243814'
   alias: Restore Samba Backup sensor on startup
-  description: ""
+  description: ''
   trigger:
-    - event: start
-      platform: homeassistant
+  - event: start
+    platform: homeassistant
   condition: []
   action:
-    - service: hassio.addon_stdin
-      data:
-        addon: 15d21743_samba_backup
-        input: restore-sensor
+  - service: hassio.addon_stdin
+    data:
+      addon: 15d21743_samba_backup
+      input: restore-sensor
+  mode: single
+- id: '1615145533484'
+  alias: Partial Snapshot
+  description: Automation to run the partial snapshot script
+  trigger:
+  - platform: time
+    at: 03:30:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+  action:
+  - service: hassio.addon_stdin
+    data:
+      addon: 15d21743_samba_backup
+      input:
+        command: trig
   mode: single
