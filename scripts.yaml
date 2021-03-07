@@ -172,7 +172,7 @@ manual_snapshot:
         addon: 15d21743_samba_backup
         input:
           command: trigger
-          backup_name:
+          backup_name: "{type}_(Samba_Backup)-{date}-v{version}"
   mode: single
 "1614191255864":
   alias: "Partial Snapshot "
@@ -180,5 +180,9 @@ manual_snapshot:
     - service: hassio.addon_stdin
       data:
         addon: 15d21743_samba_backup
-        input: trigger
+        input:
+          command: trigger
+          exclude_addons: [15ef4d2f_esphome, core_mariadb]
+          exclude_folders: [node-red, image, esphome, www]
+          backup_name: "{type}_(Samba_Backup)-{date}-v{version}"
   mode: single
