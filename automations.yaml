@@ -256,9 +256,18 @@
     - fri
     - sat
   action:
-  - service: hassio.addon_stdin
-    data:
-      addon: 15d21743_samba_backup
-      input:
-        command: trig
+  - service: script.part_snapshot
+  mode: single
+- id: '1615150083415'
+  alias: Full Snapshot
+  description: Automation to run the full snapshot script
+  trigger:
+  - platform: time
+    at: 03:30:00
+  condition:
+  - condition: time
+    weekday:
+    - sun
+  action:
+  - service: script.full_snapshot
   mode: single
