@@ -61,24 +61,26 @@ webostv:
       mac: 08:23:fe:56:9912
       broadcast_address: 192.168.86.39
   customize:
-   sources:
-     - YouTube TV
-     - Live TV
-     - Channel Plus
-     - Netflix
-     - Amazon Prime Video
-     - YouTube
-     - Emby
-     - Plex
-     - LG Content Store
-     - HDMI 1
-     - HDMI 2
-     - HDMI 3
+    sources:
+      - YouTube TV
+      - Live TV
+      - Channel Plus
+      - Netflix
+      - Amazon Prime Video
+      - YouTube
+      - Emby
+      - Plex
+      - LG Content Store
+      - HDMI 1
+      - HDMI 2
+      - HDMI 3
 
 media_player:
 
 #MQTT Broker
-#mqtt:
+mqtt:
+  discovery: true
+  discovery_prefix: homeassistant
 #  broker: 192.168.86.86
 #   port: 1883
 #   client_id: home-assistant-1

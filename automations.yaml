@@ -122,7 +122,7 @@
   action:
   - scene: scene.nick_nack_random
   - scene: scene.bong_lamp_led_random
-  - scene: scene.kitchen_lightstrip_morning
+  - scene: scene.kitchen_prep
   - service: homeassistant.turn_on
     data:
       entity_id: group.entertainment_center_2
