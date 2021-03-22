@@ -200,3 +200,5 @@ switch:
     optimistic: false
     qos: 0
     retain: true
+#HACS Custom
+## Mini Graph Card

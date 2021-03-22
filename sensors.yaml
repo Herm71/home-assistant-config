@@ -165,3 +165,8 @@
   command: response=$(curl -LIk -m 3 http://192.168.86.97:8096 -o /dev/null -w "%{http_code}\n" -s); test "$response" -ge 200 && echo "Online" || echo "Offline"
   scan_interval: 90
   value_template: "{{ value }}"
+- platform: command_line
+  name: Flexget Status
+  command: response=$(curl -LIk -m 3 http://192.168.86.97:5050 -o /dev/null -w "%{http_code}\n" -s); test "$response" -ge 200 && echo "Online" || echo "Offline"
+  scan_interval: 90
+  value_template: "{{ value }}"
