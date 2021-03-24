@@ -13,8 +13,8 @@
   action:
   - service: media_player.turn_off
     data:
-      entity_id: media_player.lg_tv_2
-    entity_id: media_player.lg_tv_2
+      entity_id: media_player.lg_tv_4
+    entity_id: media_player.lg_tv_4
   - service: media_player.turn_off
     data:
       entity_id: media_player.jason_s_group
@@ -213,7 +213,7 @@
     entity_id: media_player.plex_plex_cast_chromecast
   - service: media_player.turn_off
     data: {}
-    entity_id: media_player.lg_tv_2
+    entity_id: media_player.lg_tv_4
   mode: single
 - id: '1607373949770'
   alias: Add Torrent
