@@ -271,3 +271,18 @@
   action:
   - service: script.full_snapshot
   mode: single
+- id: '1616595193455'
+  alias: Piserver offline
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.plex_status
+    attribute: friendly_name
+    from: Online
+    to: Offline
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: Piserver is {{states('sensor.plex_status')}}
+  mode: single

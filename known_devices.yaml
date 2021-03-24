@@ -201,3 +201,24 @@ d8_8c_79_47_71_ac:
   icon:
   picture:
   track: true
+
+32tclrokutv_lan:
+  name: 32tclrokutv.lan
+  mac: D8:13:99:79:B6:9B
+  icon:
+  picture:
+  track: true
+
+d8_8c_79_64_5d_8b:
+  name: d8_8c_79_64_5d_8b
+  mac: D8:8C:79:64:5D:8B
+  icon:
+  picture:
+  track: true
+
+harmonyhub_lan:
+  name: harmonyhub.lan
+  mac: C8:DB:26:04:77:1B
+  icon:
+  picture:
+  track: true
