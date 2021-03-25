@@ -222,3 +222,10 @@ harmonyhub_lan:
   icon:
   picture:
   track: true
+
+lgwebostv_lan_2:
+  name: lgwebostv.lan
+  mac: 00:51:ED:30:41:95
+  icon:
+  picture:
+  track: true
