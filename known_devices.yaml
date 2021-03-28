@@ -167,13 +167,6 @@ aria2_lan:
   picture:
   track: false
 
-# lgwebostv_lan_2:
-#   name: lgwebostv.lan
-#   mac: 00:51:ED:30:41:95
-#   icon:
-#   picture:
-#   track: false
-
 ac_37_43_46_a4_8e:
   name: ac_37_43_46_a4_8e
   mac: AC:37:43:46:A4:8E
@@ -223,9 +216,9 @@ harmonyhub_lan:
   picture:
   track: true
 
-lgwebostv_lan_2:
+lgwebostv_lan:
   name: lgwebostv.lan
-  mac: 00:51:ED:30:41:95
+  mac: a8:23:fe:56:99:12
   icon:
   picture:
   track: true
