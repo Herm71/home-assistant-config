@@ -58,7 +58,7 @@ webostv:
   turn_on_action:
     service: wake_on_lan.send_magic_packet
     data:
-      mac: 08:23:fe:56:9912
+      mac: a8:23:fe:56:99:12
       broadcast_address: 192.168.86.39
   customize:
     sources:
