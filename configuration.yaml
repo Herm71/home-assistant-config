@@ -54,7 +54,7 @@ wake_on_lan:
 # LG WebOS TV
 webostv:
   host: 192.168.86.39
-  name: LG TV
+  name: Living Room TV
   turn_on_action:
     service: wake_on_lan.send_magic_packet
     data:
@@ -68,7 +68,6 @@ webostv:
       - Netflix
       - Amazon Prime Video
       - YouTube
-      - Emby
       - Plex
       - LG Content Store
       - HDMI 1
