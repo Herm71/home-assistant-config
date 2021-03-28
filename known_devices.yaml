@@ -229,3 +229,10 @@ lgwebostv_lan_2:
   icon:
   picture:
   track: true
+
+piserver_lan:
+  name: piserver.lan
+  mac: E4:5F:01:09:8E:1A
+  icon:
+  picture:
+  track: true
