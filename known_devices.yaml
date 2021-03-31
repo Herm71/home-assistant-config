@@ -146,7 +146,7 @@ ubuntu_lan:
   track: false
 
 26_73_60_d5_fe_f6:
-  name: Jason Phone
+  name: Jason Phone Wifi Connection
   gravatar: jasonchafin@gmail.com
   mac: 26:73:60:D5:FE:F6
   icon:
