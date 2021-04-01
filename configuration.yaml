@@ -30,7 +30,18 @@ homeassistant:
   #whitelist_external_dirs:
   #  - /usr/var/dumping-ground
   #  - /tmp
-#Recorder -- Database management
+# Owntracks
+owntracks:
+  max_gps_accuracy: 200
+  waypoints: true
+  mqtt_topic: "homeassistant/owntracks/#"
+  events_only: true
+  waypoint_whitelist:
+    - jason
+  region_mapping:
+    cabin: home
+    office: work
+# Recorder -- Database management
 recorder:
   purge_keep_days: 30
   commit_interval: 60
