@@ -87,6 +87,14 @@ webostv:
 
 media_player:
 
+# AndroidTV
+media_player:
+  - platform: androidtv
+    host: 192.168.86.99
+    name: "Entertainment Center Google TV"
+    adb_server_ip: 127.0.0.1
+    adb_server_port: 5037
+
 #MQTT Broker
 mqtt:
   discovery: true
