@@ -229,3 +229,17 @@ piserver_lan:
   icon:
   picture:
   track: true
+
+lgwebostv_lan_2:
+  name: lgwebostv.lan
+  mac: 00:51:ED:30:41:95
+  icon:
+  picture:
+  track: true
+
+android_1b08de1cebcf633_lan:
+  name: android_1b08de1cebcf633.lan
+  mac: 1C:62:B8:98:49:42
+  icon:
+  picture:
+  track: true
