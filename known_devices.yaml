@@ -243,3 +243,10 @@ android_1b08de1cebcf633_lan:
   icon:
   picture:
   track: true
+
+hahai_lan:
+  name: hahai.lan
+  mac: C8:F3:19:6B:BE:F4
+  icon:
+  picture:
+  track: true
