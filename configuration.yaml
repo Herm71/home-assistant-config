@@ -92,19 +92,19 @@ media_player:
   - platform: androidtv
     host: 192.168.86.99
     port: 555
-    name: "Entertainment Center Google TV"
+    name: "GoogleTV:Entertainment Center"
     adb_server_ip: 127.0.0.1 # IP for the HA add on
     adb_server_port: 5037 # port on the ADB server add on
   - platform: androidtv
     host: 192.168.86.123
     port: 555
-    name: "Kitchen Google TV"
+    name: "GoogleTV:Kitchen"
     adb_server_ip: 127.0.0.1 # IP for the HA add on
     adb_server_port: 5037 # port on the ADB server add on
   - platform: androidtv
     host: 192.168.86.109
     port: 555
-    name: "Bedroom Google TV"
+    name: "GoogleTV:Bedroom"
     adb_server_ip: 127.0.0.1 # IP for the HA add on
     adb_server_port: 5037 # port on the ADB server add on
 #MQTT Broker
