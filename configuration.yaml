@@ -91,19 +91,16 @@ media_player:
 media_player:
   - platform: androidtv
     host: 192.168.86.99
-    port: 555
     name: "GoogleTV:Entertainment Center"
     adbkey: "/config/.android/adbkey"
 media_player:
   - platform: androidtv
     host: 192.168.86.123
-    port: 555
     name: "GoogleTV:Kitchen"
     adbkey: "/config/.android/adbkey"
 media_player:
   - platform: androidtv
     host: 192.168.86.109
-    port: 555
     name: "GoogleTV:Bedroom"
     adbkey: "/config/.android/adbkey"
 #MQTT Broker
